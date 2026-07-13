@@ -71,6 +71,8 @@ const song = songs[index];
 
 audio.src = song.src;
 
+console.log(audio.src);
+
 title.textContent = song.title;
 
 artist.textContent = song.artist;
@@ -84,16 +86,23 @@ renderPlaylist();
 /* ==========================
    PLAY
 ========================== */
+function playSong() {
 
-function playSong(){
+    audio.play()
+    .then(() => {
 
-audio.play();
+        isPlaying = true;
 
-isPlaying = true;
+        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
 
-playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        cover.classList.add("playing");
 
-cover.classList.add("playing");
+    })
+    .catch(err => {
+
+        console.error("Audio Error:", err);
+
+    });
 
 }
 
