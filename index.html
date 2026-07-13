@@ -1,151 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>Premium Media Player</title>
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 
-<title>My Music</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="app">
-
-<!-- Sidebar -->
-
-<div class="sidebar">
-
-<h2>
-🎵 My Music
-</h2>
-
-<input
-type="text"
-id="search"
-placeholder="Search songs...">
-
-<div
-id="songList"
-class="song-list">
-
-</div>
-
-</div>
-
-<!-- Player -->
+<div class="background"></div>
 
 <div class="player">
 
-<div class="cover-area">
+    <div class="left-panel">
 
-<img
-id="coverImage"
-src="covers/default.jpg"
-alt="Album Cover">
+        <div class="cover-box">
+
+            <img id="cover"
+            src="assets/images/default.jpg">
+
+        </div>
+
+        <div class="song-details">
+
+            <h2 id="title">No Song Selected</h2>
+
+            <p id="artist">Unknown Artist</p>
+
+        </div>
+
+        <div class="equalizer" id="equalizer">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+    <div class="right-panel">
+
+        <div class="top-bar">
+
+            <button id="themeBtn">
+
+                <i class="fas fa-moon"></i>
+
+            </button>
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Search song...">
+
+        </div>
+
+        <div class="playlist" id="playlist">
+
+        </div>
+
+        <div class="progress-container">
+
+            <span id="currentTime">00:00</span>
+
+            <input
+                type="range"
+                id="progress"
+                value="0">
+
+            <span id="duration">00:00</span>
+
+        </div>
+
+        <div class="controls">
+
+            <button id="shuffle">
+
+                <i class="fas fa-random"></i>
+
+            </button>
+
+            <button id="prev">
+
+                <i class="fas fa-backward"></i>
+
+            </button>
+
+            <button id="play">
+
+                <i class="fas fa-play"></i>
+
+            </button>
+
+            <button id="next">
+
+                <i class="fas fa-forward"></i>
+
+            </button>
+
+            <button id="repeat">
+
+                <i class="fas fa-redo"></i>
+
+            </button>
+
+        </div>
+
+        <div class="bottom-controls">
+
+            <button id="mute">
+
+                <i class="fas fa-volume-up"></i>
+
+            </button>
+
+            <input
+                type="range"
+                id="volume"
+                min="0"
+                max="100"
+                value="100">
+
+            <select id="speed">
+
+                <option value="0.5">0.5x</option>
+                <option value="0.75">0.75x</option>
+                <option value="1" selected>1x</option>
+                <option value="1.25">1.25x</option>
+                <option value="1.5">1.5x</option>
+                <option value="2">2x</option>
+
+            </select>
+
+        </div>
+
+    </div>
 
 </div>
 
-<h1 id="currentSong">
-Select a Song
-</h1>
-
-<h3 id="currentArtist">
-Unknown Artist
-</h3>
-
-<div class="time">
-
-<span id="currentTime">
-
-0:00
-
-</span>
-
-<span id="totalTime">
-
-0:00
-
-</span>
-
-</div>
-
-<div
-class="progress-container"
-id="progressContainer">
-
-<div
-class="progress"
-id="progress">
-
-</div>
-
-</div>
-
-<div class="controls">
-
-<button id="prev">
-
-<i class="fas fa-backward"></i>
-
-</button>
-
-<button id="play">
-
-<i class="fas fa-play"></i>
-
-</button>
-
-<button id="next">
-
-<i class="fas fa-forward"></i>
-
-</button>
-
-</div>
-
-<div class="volume">
-
-<i class="fas fa-volume-up"></i>
-
-<input
-type="range"
-id="volume"
-min="0"
-max="100"
-value="100">
-
-</div>
-
-<audio
-id="audioPlayer">
-</audio>
-
-</div>
-
-</div>
+<audio id="audio"></audio>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
