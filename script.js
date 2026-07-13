@@ -49,39 +49,15 @@ const songs = [
 
 {
 
-title:"Song One",
+title:"Itna Na Muzse Tu Pyaar Badha",
 
-artist:"Unknown",
+artist:"Talat Mahmood - Lata Mangeshkar",
 
-src:"assets/songs/song1.mp3",
+src:"assets/songs/Itna na muzse tu pyaar badha.mp3",
 
 cover:"assets/images/song1.jpg"
 
 },
-
-{
-
-title:"Song Two",
-
-artist:"Unknown",
-
-src:"assets/songs/song2.mp3",
-
-cover:"assets/images/song2.jpg"
-
-},
-
-{
-
-title:"Song Three",
-
-artist:"Unknown",
-
-src:"assets/songs/song3.mp3",
-
-cover:"assets/images/song3.jpg"
-
-}
 
 ];
 
