@@ -57,7 +57,7 @@ src:"assets/songs/Itna na muzse tu pyaar badha.mp3",
 
 "duration": "3:53",
 
-cover:"assets/images/default.jpg"
+cover:"assets/images/default.jpg?v=2"
 
 },
 
