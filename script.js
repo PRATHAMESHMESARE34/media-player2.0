@@ -51,7 +51,7 @@ const songs = [
 
 title:"Itna Na Muzse Tu Pyaar Badha",
 
-artist:"Talat Mahmood - Lata Mangeshkar",
+artist:"recomposed by Pratham369.07_",
 
 src:"assets/songs/Itna na muzse tu pyaar badha.mp3",
 
