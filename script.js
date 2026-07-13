@@ -53,7 +53,7 @@ title:"Itna Na Muzse Tu Pyaar Badha",
 
 artist:"Talat Mahmood - Lata Mangeshkar",
 
-src:"assets/songs/Itna na muzse tu payaar badha.mp3",
+src:"assets/songs/Itna na muzse tu pyaar badha.mp3",
 
 "duration": "3:53",
 
