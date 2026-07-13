@@ -101,6 +101,8 @@ artist.textContent = song.artist;
 
 cover.src = song.cover;
 
+loadLyrics(song.lrc);
+
 renderPlaylist();
 
 }
@@ -682,6 +684,17 @@ updateVolumeIcon();
 updateMediaSession();
 
 renderPlaylist();
+
+audio.addEventListener("timeupdate", () => {
+    const current = audio.currentTime;
+
+    for (let i = lyrics.length - 1; i >= 0; i--) {
+        if (current >= lyrics[i].time) {
+            document.getElementById("lyrics").textContent = lyrics[i].text;
+            break;
+        }
+    }
+});
 
 /* ===========================================
    END
