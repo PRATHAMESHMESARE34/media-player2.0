@@ -432,3 +432,250 @@ audio.addEventListener("ended", () => {
     nextSong();
 
 });
+
+/* ===========================================
+   SEARCH
+=========================================== */
+
+search.addEventListener("keyup", () => {
+
+    const value = search.value.toLowerCase();
+
+    const songsList = document.querySelectorAll(".song");
+
+    songsList.forEach((song) => {
+
+        song.style.display = song.innerText
+            .toLowerCase()
+            .includes(value)
+            ? "flex"
+            : "none";
+
+    });
+
+});
+
+/* ===========================================
+   THEME
+=========================================== */
+
+const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme === "light"){
+
+    document.body.classList.add("light");
+
+}
+
+themeBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("light");
+
+    localStorage.setItem(
+        "theme",
+        document.body.classList.contains("light")
+            ? "light"
+            : "dark"
+    );
+
+});
+
+/* ===========================================
+   SAVE CURRENT SONG
+=========================================== */
+
+function savePlayerState(){
+
+    localStorage.setItem("currentSong", currentSong);
+    localStorage.setItem("currentTime", audio.currentTime);
+
+}
+
+audio.addEventListener("timeupdate", savePlayerState);
+
+/* ===========================================
+   RESTORE
+=========================================== */
+
+const savedSong = localStorage.getItem("currentSong");
+const savedTime = localStorage.getItem("currentTime");
+
+if(savedSong !== null){
+
+    currentSong = Number(savedSong);
+
+    loadSong(currentSong);
+
+    audio.addEventListener("loadedmetadata", () => {
+
+        if(savedTime){
+
+            audio.currentTime = Number(savedTime);
+
+        }
+
+    });
+
+}
+
+/* ===========================================
+   KEYBOARD SHORTCUTS
+=========================================== */
+
+document.addEventListener("keydown", (e) => {
+
+    if(e.target.tagName === "INPUT") return;
+
+    switch(e.code){
+
+        case "Space":
+
+            e.preventDefault();
+
+            isPlaying ? pauseSong() : playSong();
+
+            break;
+
+        case "ArrowRight":
+
+            audio.currentTime += 5;
+
+            break;
+
+        case "ArrowLeft":
+
+            audio.currentTime -= 5;
+
+            break;
+
+        case "ArrowUp":
+
+            audio.volume = Math.min(audio.volume + 0.1, 1);
+            volume.value = audio.volume * 100;
+            updateVolumeIcon();
+
+            break;
+
+        case "ArrowDown":
+
+            audio.volume = Math.max(audio.volume - 0.1, 0);
+            volume.value = audio.volume * 100;
+            updateVolumeIcon();
+
+            break;
+
+        case "KeyM":
+
+            muteBtn.click();
+
+            break;
+
+        case "KeyN":
+
+            nextSong();
+
+            break;
+
+        case "KeyP":
+
+            prevSong();
+
+            break;
+
+    }
+
+});
+
+/* ===========================================
+   MEDIA SESSION
+=========================================== */
+
+if("mediaSession" in navigator){
+
+    navigator.mediaSession.setActionHandler("play", playSong);
+
+    navigator.mediaSession.setActionHandler("pause", pauseSong);
+
+    navigator.mediaSession.setActionHandler("previoustrack", prevSong);
+
+    navigator.mediaSession.setActionHandler("nexttrack", nextSong);
+
+}
+
+/* ===========================================
+   UPDATE MEDIA METADATA
+=========================================== */
+
+function updateMediaSession(){
+
+    if(!("mediaSession" in navigator)) return;
+
+    const song = songs[currentSong];
+
+    navigator.mediaSession.metadata = new MediaMetadata({
+
+        title: song.title,
+
+        artist: song.artist,
+
+        artwork: [
+
+            {
+
+                src: song.cover,
+
+                sizes: "512x512",
+
+                type: "image/jpeg"
+
+            }
+
+        ]
+
+    });
+
+}
+
+const oldLoadSong = loadSong;
+
+loadSong = function(index){
+
+    oldLoadSong(index);
+
+    updateMediaSession();
+
+};
+
+/* ===========================================
+   LOADING
+=========================================== */
+
+audio.addEventListener("waiting", () => {
+
+    document.body.classList.add("loading");
+
+});
+
+audio.addEventListener("playing", () => {
+
+    document.body.classList.remove("loading");
+
+});
+
+/* ===========================================
+   INITIALIZE
+=========================================== */
+
+loadSong(currentSong);
+
+audio.volume = volume.value / 100;
+
+updateVolumeIcon();
+
+updateMediaSession();
+
+renderPlaylist();
+
+/* ===========================================
+   END
+=========================================== */
