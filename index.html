@@ -1,97 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Music Player</title>
 
-<style>
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#121212;
-    color:white;
-}
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-header{
-    background:#1DB954;
-    padding:20px;
-    text-align:center;
-    font-size:30px;
-    font-weight:bold;
-}
+<title>My Music</title>
 
-.container{
-    width:90%;
-    max-width:900px;
-    margin:auto;
-    padding:20px;
-}
+<link rel="stylesheet" href="style.css">
 
-.song{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:#1f1f1f;
-    padding:15px;
-    margin:10px 0;
-    border-radius:10px;
-}
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-button{
-    background:#1DB954;
-    border:none;
-    color:white;
-    padding:10px 20px;
-    border-radius:5px;
-    cursor:pointer;
-}
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-button:hover{
-    background:#17a34a;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
 
-audio{
-    width:100%;
-    margin-top:20px;
-}
-</style>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
 
 <body>
 
-<header>
-🎵 My Music Player
-</header>
+<div class="app">
 
-<div class="container">
+<!-- Sidebar -->
 
-<div class="song">
-<span>Song 1</span>
-<button onclick="playSong('songs/song1.mp3')">Play</button>
-</div>
+<div class="sidebar">
 
-<div class="song">
-<span>Song 2</span>
-<button onclick="playSong('songs/song2.mp3')">Play</button>
-</div>
+<h2>
+🎵 My Music
+</h2>
 
-<div class="song">
-<span>Song 3</span>
-<button onclick="playSong('songs/song3.mp3')">Play</button>
-</div>
+<input
+type="text"
+id="search"
+placeholder="Search songs...">
 
-<audio id="player" controls></audio>
+<div
+id="songList"
+class="song-list">
 
 </div>
 
-<script>
-function playSong(song){
-    const player=document.getElementById("player");
-    player.src=song;
-    player.play();
-}
-</script>
+</div>
+
+<!-- Player -->
+
+<div class="player">
+
+<div class="cover-area">
+
+<img
+id="coverImage"
+src="covers/default.jpg"
+alt="Album Cover">
+
+</div>
+
+<h1 id="currentSong">
+Select a Song
+</h1>
+
+<h3 id="currentArtist">
+Unknown Artist
+</h3>
+
+<div class="time">
+
+<span id="currentTime">
+
+0:00
+
+</span>
+
+<span id="totalTime">
+
+0:00
+
+</span>
+
+</div>
+
+<div
+class="progress-container"
+id="progressContainer">
+
+<div
+class="progress"
+id="progress">
+
+</div>
+
+</div>
+
+<div class="controls">
+
+<button id="prev">
+
+<i class="fas fa-backward"></i>
+
+</button>
+
+<button id="play">
+
+<i class="fas fa-play"></i>
+
+</button>
+
+<button id="next">
+
+<i class="fas fa-forward"></i>
+
+</button>
+
+</div>
+
+<div class="volume">
+
+<i class="fas fa-volume-up"></i>
+
+<input
+type="range"
+id="volume"
+min="0"
+max="100"
+value="100">
+
+</div>
+
+<audio
+id="audioPlayer">
+</audio>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
