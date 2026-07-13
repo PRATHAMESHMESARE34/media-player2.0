@@ -55,6 +55,8 @@ artist:"Talat Mahmood - Lata Mangeshkar",
 
 src:"assets/songs/Itna na muzse tu payaar badha.mp3",
 
+"duration": "3:53",
+
 cover:"assets/images/default.jpg"
 
 },
