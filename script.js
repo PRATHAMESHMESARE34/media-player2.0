@@ -110,22 +110,21 @@ cover:"assets/images/Sach keh raha hai diwaana.png"
 
 function loadSong(index){
 
-const song = songs[index];
+    console.log("loadSong called", index);   // 👈 Add this line
 
-audio.src = song.src;
+    const song = songs[index];
 
-console.log(audio.src);
+    audio.src = song.src;
 
-title.textContent = song.title;
+    console.log(audio.src);
 
-artist.textContent = song.artist;
+    title.textContent = song.title;
+    artist.textContent = song.artist;
+    cover.src = song.cover;
 
-cover.src = song.cover;
+    loadLyrics(song.lrc);
 
-loadLyrics(song.lrc);
-
-renderPlaylist();
-
+    renderPlaylist();
 }
 
 /* ==========================
