@@ -48,7 +48,7 @@ async function loadLyrics(file) {
     const text = await response.text();
 
     lyrics = text.split("\n").map(line => {
-        const match = line.match(/^\[(\d{2}):(\d{2}):(\d{3})\](.*)/);
+        const match = line.match(/^\[(\d{2}):(\d{2})[:.](\d{2,3})\](.*)/);
 
         if (!match) return null;
 
