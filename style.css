@@ -799,12 +799,22 @@ transform:translateY(0);
 /* ===========================
    Lyrics section
 =========================== */
-.lyrics {
-    margin-top: 15px;
-    text-align: center;
-    color: white;
-    font-size: 16px;
-    min-height: 24px;
+.lyrics{
+    margin-top:15px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    min-height:140px;
+    overflow:hidden;
+}
+
+.lyric-line{
+    width:100%;
+    margin:6px 0;
+    transition:.3s;
 }
 .active{
     font-size:30px;
