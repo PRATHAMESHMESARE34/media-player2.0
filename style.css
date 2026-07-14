@@ -800,21 +800,20 @@ transform:translateY(0);
    Lyrics section
 =========================== */
 .lyrics{
-    margin-top:15px;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center;
-    color:white;
-    min-height:140px;
-    overflow:hidden;
+    min-height:180px;
+    height:180px;
+    overflow:visible;
+    gap:8px;
 }
 
 .lyric-line{
+    display:block;
     width:100%;
-    margin:6px 0;
-    transition:.3s;
+    text-align:center;
 }
 .active{
     font-size:30px;
