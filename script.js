@@ -124,6 +124,8 @@ function loadSong(index){
 
     loadLyrics(song.lrc);
 
+   savePlayerState();
+
     renderPlaylist();
 }
 
