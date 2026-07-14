@@ -796,6 +796,9 @@ transform:translateY(0);
 
 }
 
+/* ===========================
+   Lyrics section
+=========================== */
 .lyrics {
     margin-top: 15px;
     text-align: center;
@@ -803,3 +806,16 @@ transform:translateY(0);
     font-size: 16px;
     min-height: 24px;
 }
+.active{
+    font-size:30px;
+    font-weight:bold;
+    opacity:1;
+}
+
+.faded{
+    opacity:.45;
+}
+
+.faded-more{
+    opacity:.25;
+   }
