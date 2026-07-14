@@ -89,9 +89,9 @@ cover:"assets/images/Itna na muzse tu pyaar badha.png"
    
     artist: "Pratham369.07_",
    
-    src: "assets/songs/Sach keh raha hai diwaana.mp3",
+    src: "assets/songs/Sach keh raha hai diwaana.mp3?v=3",
    
-    lrc: "assets/songs/Sach keh raha hai diwaana.lrc",
+    lrc: "assets/songs/Sach keh raha hai diwaana.lrc?v=3",
    
     duration: "0:49",
    
