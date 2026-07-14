@@ -76,7 +76,7 @@ title:"Itna Na Muzse Tu Pyaar Badha",
 
 artist:"recomposed by Pratham369.07_",
 
-src:"assets/songs/Itna na muzse tu pyaar badha.mp3",
+src:"assets/songs/Itna na muzse tu pyaar badha.m4a",
 
 lrc: "assets/Lyrics/Itna na muzse tu pyaar badha.lrc",
 
