@@ -676,7 +676,7 @@ function updateMediaSession(){
 
                 sizes: "512x512",
 
-                type: "image/jpeg"
+                type: "jpg/png"
 
             }
 
