@@ -543,14 +543,14 @@ function savePlayerState(){
 
 }
 
-/*audio.addEventListener("timeupdate", savePlayerState);*/
+audio.addEventListener("timeupdate", savePlayerState);
 
 /* ===========================================
    RESTORE
 =========================================== */
 
 const savedSong = localStorage.getItem("currentSong");
-/*const savedTime = localStorage.getItem("currentTime");*/
+const savedTime = localStorage.getItem("currentTime");
 
 if(savedSong !== null){
 
@@ -558,7 +558,7 @@ if(savedSong !== null){
 
     loadSong(currentSong);
 
-   /* audio.addEventListener("loadedmetadata", () => {
+    audio.addEventListener("loadedmetadata", () => {
 
         if(savedTime){
 
@@ -568,7 +568,7 @@ if(savedSong !== null){
 
     });
 
-}*/
+}
 
 /* ===========================================
    KEYBOARD SHORTCUTS
