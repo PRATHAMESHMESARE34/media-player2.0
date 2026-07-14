@@ -77,7 +77,7 @@ lrc: "assets/songs/Itna na muzse tu pyaar badha.lrc",
 
 "duration": "3:53",
 
-cover:"assets/images/Itna na muzse tu pyaar badha.png"
+cover:"assets/images/Itna na muzse tu pyaar badha.png?v=2"
 
 },
 
