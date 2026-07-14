@@ -536,6 +536,7 @@ themeBtn.addEventListener("click", () => {
    SAVE CURRENT SONG
 =========================================== */
 
+
 function savePlayerState(){
 
     localStorage.setItem("currentSong", currentSong);
@@ -544,7 +545,6 @@ function savePlayerState(){
 }
 
 audio.addEventListener("timeupdate", savePlayerState);
-
 /* ===========================================
    RESTORE
 =========================================== */
