@@ -90,7 +90,7 @@ title:"Sach Keh Raha Hai Diwaana",
 
 artist:"recomposed by Pratham369.07_",
 
-src:"assets/songs/Sach keh raha hai diwaana.mp3,
+src:"assets/songs/Sach keh raha hai diwaana.mp3",
 
 lrc: "assets/songs/Sach keh raha hai diwaana.lrc",
 
