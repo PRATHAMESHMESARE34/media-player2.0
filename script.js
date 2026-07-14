@@ -110,7 +110,7 @@ cover:"assets/images/Sach keh raha hai diwaana.png"
 
 function loadSong(index){
 
-    console.log("loadSong called", index);   // 👈 Add this line
+    console.log("loadSong called", index);  
 
     const song = songs[index];
 
