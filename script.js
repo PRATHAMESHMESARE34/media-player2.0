@@ -287,8 +287,29 @@ audio.addEventListener("loadedmetadata", () => {
 audio.addEventListener("timeupdate", () => {
 
     progress.value = Math.floor(audio.currentTime);
-
     currentTime.textContent = formatTime(audio.currentTime);
+
+    const current = audio.currentTime;
+    const lyricsBox = document.getElementById("lyrics");
+
+    for (let i = lyrics.length - 1; i >= 0; i--) {
+        if (current >= lyrics[i].time) {
+
+            const prev = lyrics[i - 1]?.text || "";
+            const curr = lyrics[i].text;
+            const next1 = lyrics[i + 1]?.text || "";
+            const next2 = lyrics[i + 2]?.text || "";
+
+            lyricsBox.innerHTML = `
+                <div class="lyric-line faded">${prev}</div>
+                <div class="lyric-line active">${curr}</div>
+                <div class="lyric-line faded">${next1}</div>
+                <div class="lyric-line faded-more">${next2}</div>
+            `;
+
+            break;
+        }
+    }
 
 });
 
