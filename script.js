@@ -92,7 +92,7 @@ title:"Sach Keh Raha Hai Diwaana",
 
 artist:"Pratham369.07_",
 
-src:"assets/songs/Sach keh raha hai diwaana.mp3",
+audio:"assets/songs/Sach keh raha hai diwaana.mp3",
 
 lrc: "assets/Lyrics/Sach keh raha hai diwaana.lrc",
 
