@@ -86,6 +86,22 @@ cover:"assets/images/Itna na muzse tu pyaar badha.png"
 
 },
 
+{
+
+title:"Sach Keh Raha Hai Diwaana",
+
+artist:"Pratham369.07_",
+
+src:"assets/songs/Sach keh raha hai diwaana.mp3",
+
+lrc: "assets/Lyrics/Sach keh raha hai diwaana.lrc",
+
+"duration": "0:49",
+
+cover:"assets/images/Sach keh raha hai diwaana.png"
+
+},
+
 ];
 
 /* ==========================
